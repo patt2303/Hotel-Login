@@ -1,0 +1,151 @@
+/* Restaurant Section */
+.restaurant {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into 2 equal columns */
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #d4e7f1;
+    text-align: left;
+  }
+  
+  .restaurant-text {
+    padding: 2rem;
+  }
+  
+  .restaurant h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #6079a8; /* Bright color for the heading */
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .restaurant p {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .book-table-btn {
+    padding: 1rem 2rem;
+    background-color: #91a5ca;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-table-btn:hover {
+    background-color: #e65a4f; /* Slightly darker red on hover */
+  }
+  
+  /* Image Collage Section */
+  .restaurant-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into 2 equal parts */
+    gap: 10px;
+    height: 100%; /* Ensure the images fill the container */
+  }
+  
+  .restaurant-images > div {
+    height: 100%; /* Set the height of each image container */
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+  }
+  
+  .image-1 {
+    background-image: url('../assets/5.jpeg'); /* Replace with your image URL */
+  }
+  
+  .image-2 {
+    background-image: url('https://img.freepik.com/free-photo/midsection-waiter-serving-two-dishes-wooden-table_181624-54414.jpg?t=st=1743337575~exp=1743341175~hmac=a648ef5194dc186e8c7e836381c67cf481fc92eaa7d6d191ea9d42772eb23385&w=900'); /* Replace with your image URL */
+  }
+  
+  .image-3 {
+    background-image: url('https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with your image URL */
+  }
+
+  .image-4 {
+    background-image: url('https://images.unsplash.com/photo-1634473115508-4291d758cf03?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image URL */
+  }
+
+  /* Styles for modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  position: relative;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.reservation-form .form-group {
+  margin-bottom: 15px;
+}
+
+.reservation-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.reservation-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+  
+  @media (max-width: 768px) {
+    .restaurant {
+      grid-template-columns: 1fr; /* Stack text and images vertically on smaller screens */
+    }
+  
+    .restaurant-images {
+      grid-template-columns: 1fr; /* Stack images in one column */
+    }
+  }
+  

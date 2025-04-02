@@ -1,0 +1,66 @@
+/* Facilities Section */
+.facilities {
+    background-color: #d4e7f1;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #91a5ca;
+  }
+  
+  .facilities-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #6079a8; /* Bright color for title */
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .facilities-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .facility {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .facility:hover {
+    transform: translateY(-10px); /* Makes the facility card pop on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .facility-icon {
+    font-size: 3rem;
+    color: #91a5ca; /* Color to match the title */
+    margin-bottom: 1rem;
+  }
+  
+  .facility h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .facility p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  
+  /* Hover Effects */
+  .facility:hover h3 {
+    color: #ff6f61;
+  }
+  
+  .facility:hover p {
+    color: #333;
+  }
+  

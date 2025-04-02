@@ -1,0 +1,42 @@
+.about-us {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Ensure background image covers the section */
+    background-position: center;
+    animation: backgroundChange 20s infinite; /* Set background image change animation */
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center; /* Vertically center the text */
+    color: rgb(22, 1, 1);
+    text-shadow: 2px 2px 5px rgba(92, 89, 89, 0.7); /* Optional: text shadow to make text more readable */
+    padding-left: 5rem;
+  }
+  
+  .about-us .about-content {
+    max-width: 50%; /* Limit the width of the text */
+  }
+  
+  .about-us h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-us p {
+    font-size: 1.5rem;
+  }
+  
+  /* Background image change animation */
+  @keyframes backgroundChange {
+    0% {
+      background-image: url('../assets/1.jpeg');
+    }
+    33% {
+      background-image: url('../assets/2.jpeg');
+    }
+    66% {
+      background-image: url('../assets/3.jpeg');
+    }
+    100% {
+      background-image: url('../assets/4.jpeg');
+    }
+  }
