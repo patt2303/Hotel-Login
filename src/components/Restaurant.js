@@ -35,7 +35,7 @@ const Restaurant = () => {
 
     try {
       setIsSubmitting(true); // Set loading state
-      const response = await fetch("http://localhost:3000/api/book-table", {  // Ensure the port is correct
+      const response = await fetch("https://hotel-login-l2rm9ampa-patt2303s-projects.vercel.app/api/book-table", {  // Ensure the port is correct
         method: "POST",
         headers: {
           "Content-Type": "application/json",

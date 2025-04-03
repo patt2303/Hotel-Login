@@ -8,11 +8,31 @@ require('dotenv').config();  // To use environment variables
 const app = express();
 const port = process.env.PORT || 3001;  // Ensure the server runs on port 3001
 
-// Enable CORS to allow cross-origin requests from frontend (React)
-app.use(cors());
+// Enable CORS with frontend origin, replace with your actual frontend URL
+const corsOptions = {
+  origin: 'https://hotel-login-11ui3p10z-patt2303s-projects.vercel.app',  // Replace with your frontend domain
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true,  // Allow cookies if needed, modify this according to your needs
+};
+
+// Apply CORS to all routes
+app.use(cors(corsOptions));
+
+// Handle preflight OPTIONS requests (Important for CORS)
+app.options('*', cors(corsOptions));  // Allow preflight requests for all routes
 
 // Parse incoming JSON requests
 app.use(bodyParser.json()); 
+
+// Ensure all required environment variables are present
+const requiredEnvVars = ['EMAIL_USER', 'EMAIL_PASS', 'HOTEL_EMAIL', 'TWILIO_SID', 'TWILIO_AUTH_TOKEN', 'TWILIO_PHONE', 'HOTEL_PHONE'];
+requiredEnvVars.forEach((envVar) => {
+  if (!process.env[envVar]) {
+    console.error(`Environment variable ${envVar} is missing!`);
+    process.exit(1);  // Exit the application if any required variable is missing
+  }
+});
 
 // Set up Nodemailer for email sending using environment variables
 const transporter = nodemailer.createTransport({
@@ -74,7 +94,7 @@ app.post('/api/book-table', async (req, res) => {
     } else {
       console.error('Error occurred:', error);
     }
-    
+
     res.status(500).send('Error occurred while processing reservation: ' + error.message);
   }
 });
