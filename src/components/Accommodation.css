@@ -1,91 +1,146 @@
 /* Accommodation Section */
 .accommodation {
-    background-color: #d4e7f1;
-    padding: 4rem 2rem;
-    text-align: center;
-    color: #333;
-    display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    flex-direction: column;
-    height: 100vh; /* Make the section full height */
+  background-color: #d4e7f1;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /* Use min-height instead of height to allow expansion */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.accommodation-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #6079a8;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.accommodation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.room {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.room:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.room-icon {
+  font-size: 2.5rem;
+  color: #91a5ca;
+  margin-bottom: 1rem;
+}
+
+.room h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.room p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.book-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #e65a4f;
+}
+
+/* Hover text color changes */
+.room:hover h3 {
+  color: #ff6f61;
+}
+
+.room:hover p {
+  color: #333;
+}
+
+/* Responsive - Tablets */
+@media screen and (max-width: 768px) {
+  .accommodation {
+    padding: 3rem 1.5rem;
   }
-  
+
   .accommodation-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #6079a8; /* Bright color to match the theme */
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
   }
-  
+
   .accommodation-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Smaller cards */
-    gap: 2rem;
-    max-width: 1200px; /* Limit the width to make it more compact */
-    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
-  
+
   .room {
-    background-color: #fff;
-    padding: 1.5rem; /* Reduced padding for smaller cards */
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 280px; /* Limit the max width of each card */
-    margin: 0 auto; /* Center the cards within their grid column */
+    max-width: 100%;
   }
-  
-  .room:hover {
-    transform: translateY(-10px); /* Makes the room card pop on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive - Mobile (425px and below) */
+@media screen and (max-width: 480px) {
+  .accommodation {
+    padding: 2rem 1rem;
   }
-  
-  .room-icon {
-    font-size: 2.5rem; /* Smaller icon size */
-    color: #91a5ca; /* Match with the title color */
-    margin-bottom: 1rem;
+
+  .accommodation-title {
+    font-size: 1.8rem;
   }
-  
+
+  .accommodation-list {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+
+  .room {
+    padding: 1rem;
+  }
+
   .room h3 {
-    font-size: 1.6rem; /* Smaller font size for room name */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
   }
-  
+
   .room p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
   }
-  
+
   .book-btn {
-    padding: 0.8rem 1.5rem;
-    background-color: #ff6f61;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
-  
-  .book-btn:hover {
-    background-color: #e65a4f; /* Slightly darker red on hover */
-  }
-  
-  /* Hover Effects */
-  .room:hover h3 {
-    color: #ff6f61;
-  }
-  
-  .room:hover p {
-    color: #333;
-  }
-  
+}
